@@ -28,25 +28,11 @@ fetch('https://api.52de.cn/api/data.php', params)
       });
     } else {
       // 如果响应失败，则进行其他处理
-      console.error(`Error: ${response.statusText}`);
+      window.location.href = 'https://danmao.cn';
     }
   })
   .catch(error => {
     // 如果发生错误，则进行其他处理
     console.error(`Error: ${error}`);
   });
-
-    var redirects = {
-        // 添加您的短链接和对应的目标 URL
-        'abc': 'https://baidu.com',
-        'def': 'https://youku.com',
-        'ghi': 'https://v.qq.com'
-    };
-    var path = window.location.hash.substring(1);
-    var targetUrl = redirects[path];
-    if (targetUrl) {
-        window.location.href = targetUrl;
-    } else {
-        window.location.href = 'https://danmao.cn';
-    }
     </script>
