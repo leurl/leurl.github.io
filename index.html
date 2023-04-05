@@ -5,6 +5,42 @@
 </head>
 <body>
     <script>
+// 声明请求参数
+const params = {
+  method: 'POST', // 请求方法为 POST
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded' // 请求体类型为 URL 编码形式
+  },
+  body: 'key='+window.location.hash.substring(1) // 请求体中的参数，需要根据实际情况进行修改
+};
+
+// 发送请求
+fetch('http://url.ogcn.cn/api/data.php', params)
+  .then(response => {
+    // 处理响应数据
+    if (response.ok) {
+      // 如果响应成功
+      response.json().then(data => {
+        if (data.code === 200) {
+          // 如果响应中的 code 为 200
+          // 则获取跳转地址并跳转到该地址
+          const url = data.url;
+          window.location.href = url;
+        } else {
+          // 如果响应中的 code 不为 200，则进行其他处理
+          console.error(`Error: ${data.message}`);
+        }
+      });
+    } else {
+      // 如果响应失败，则进行其他处理
+      console.error(`Error: ${response.statusText}`);
+    }
+  })
+  .catch(error => {
+    // 如果发生错误，则进行其他处理
+    console.error(`Error: ${error}`);
+  });
+
     var redirects = {
         // 添加您的短链接和对应的目标 URL
         'abc': 'https://baidu.com',
