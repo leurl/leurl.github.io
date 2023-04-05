@@ -1,1 +1,23 @@
-你好，世界
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Short Link Redirector</title>
+</head>
+<body>
+    <script>
+    var redirects = {
+        // 添加您的短链接和对应的目标 URL
+        'abc': 'https://www.example.com/page1',
+        'def': 'https://www.example.com/page2',
+        'ghi': 'https://www.example.com/page3'
+    };
+    var path = window.location.pathname.substring(1);
+    var targetUrl = redirects[path];
+    if (targetUrl) {
+        window.location.href = targetUrl;
+    } else {
+        // 处理未知的短链接
+    }
+    </script>
+</body>
+</html>
