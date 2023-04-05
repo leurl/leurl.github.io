@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>正在跳转中……</title>
-</head>
-<body>
-    <script>
+<script>
 // 声明请求参数
+document.title= 正在跳转中……;
 const params = {
   method: 'POST', // 请求方法为 POST
   headers: {
@@ -52,9 +47,6 @@ fetch('https://api.52de.cn/api/data.php', params)
     if (targetUrl) {
         window.location.href = targetUrl;
     } else {
-        // 处理未知的短链接
-        
+        window.location.href = 'https://danmao.cn';
     }
     </script>
-</body>
-</html>
