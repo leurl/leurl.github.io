@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Short Link Redirector</title>
+    <title>正在挑战中……</title>
 </head>
 <body>
     <script>
@@ -11,7 +11,7 @@
         'def': 'https://www.example.com/page2',
         'ghi': 'https://www.example.com/page3'
     };
-    var path = window.location.pathname.substring(1);
+    var path = window.location.hash.substring(1);
     var targetUrl = redirects[path];
     if (targetUrl) {
         window.location.href = targetUrl;
